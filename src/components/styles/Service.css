@@ -1,0 +1,149 @@
+/* Service.css */
+
+/* Styles for the service grid */
+.service-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: #fcfcfc; */
+    padding-bottom: 5rem;
+    /* padding-top: 5rem; */
+    
+}
+
+/* Styles for the service title */
+.service-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.service-title h4 {
+    
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.service-title p {
+    padding: 0 190px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Styles for the service wrap */
+.service-wrap {
+    margin: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6e6e6;
+    position: relative;
+}
+
+/* Styles for the service icon */
+.service-icon {
+    font-size: 40px;
+    color: #e8bc00;
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Styles for the service heading */
+.service-wrap h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e2331;
+    margin-bottom: 17px;
+    text-transform: capitalize;
+    position: relative;
+}
+
+/* Styles for the service description */
+.service-wrap p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Styles for the read more link */
+.service-wrap a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    position: relative;
+}
+
+.service-wrap a:hover {
+    text-decoration: underline;
+}
+
+/* Hover styles */
+.service-wrap:hover {
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-black-meat-western-food-banner-background-image_194600.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: local;
+    transition: all .5s;
+}
+
+.service-wrap:hover:before {
+    background: rgba(0, 0, 0, 0.2901960784313726);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    content: "";
+    top: 0;
+    opacity: 1;
+}
+
+.service-wrap:hover h4, .service-wrap:hover p, .service-wrap:hover a {
+    color: #fff;
+}
+/* Media queries for responsiveness */
+@media only screen and (max-width: 1200px) {
+    .service-title p {
+        padding: 0 150px;
+    }
+  
+    .service-wrap {
+        padding: 40px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .service-title p {
+        padding: 0 100px;
+    }
+  
+    .service-wrap {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .service-title p {
+        padding: 0 50px;
+    }
+  
+    .service-wrap {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .service-title p {
+        padding: 0 30px;
+    }
+  
+    .service-wrap {
+        padding: 15px;
+    }
+}

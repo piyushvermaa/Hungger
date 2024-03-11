@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import RestaurantList from './RestaurantList';
 import restrauntLists from './data/RestaurantLists';
 import SearchBar from './SearchBar';
@@ -15,6 +15,36 @@ const Body = () => {
             return restaurant.placeName.toLowerCase().includes(searchTxt.toLowerCase());
         }));
     }
+
+    useEffect(()=>{
+        fetchrestrauntList();
+    },[]);
+
+    async function fetchrestrauntList(){
+        try{
+            const response = await fetch('https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING');
+            const json = await response.json();
+            // initialize checkJsonData() function to check Swiggy Restaurant data
+            async function checkJsonData(jsonData) {
+            for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+              // initialize checkData for Swiggy Restaurant data
+              let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+              // if checkData is not undefined then return it
+            if (checkData !== undefined) {
+            return checkData;
+          }
+        }
+      }
+        // call the checkJsonData() function which return Swiggy Restaurant data
+        const resData = await checkJsonData(json);
+        console.log(resData);
+
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
   return (
     <div className='wrapper'>
     <SearchBar/>
@@ -35,10 +65,8 @@ const Body = () => {
             setSearchClicked(searchClicked === "false" ? "true" : "false");
         }} >Search</button>
     </div>
-
-    <h2>{searchClicked}</h2>
     <div className="restraunt-list">
-          <RestaurantList restaurants={restrauntListss}/>
+          <RestaurantList restaurants={restrauntListss} />
     </div>
     </div>
   )
