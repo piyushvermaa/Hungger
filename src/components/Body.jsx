@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import RestaurantList from './RestaurantList';
 import restrauntLists from './data/RestaurantLists';
-import SearchBar from './SearchBar';
 import '../components/styles/SearchBar.css';
 import './styles/Body.css'
+import { ShimmerCard } from './RestaurantList';
+import nores from './nores';
 
 const Body = () => {
     const [searchTxt, setSearchTxt] = useState('');
     const [searchClicked, setSearchClicked] = useState("false");
-    const [restrauntListss, setRestrauntLists] = useState(restrauntLists);
+    const [restrauntListss, setRestrauntLists] = useState([]);
 
     const handlesearch=(searchTxt)=>{
         setRestrauntLists(restrauntLists.filter((restaurant)=>{
@@ -16,8 +17,13 @@ const Body = () => {
         }));
     }
 
+    const [flag, setflag]=useState(true);
+
+
     useEffect(()=>{
         fetchrestrauntList();
+        setRestrauntLists(restrauntLists);
+        setflag(false);
     },[]);
 
     async function fetchrestrauntList(){
@@ -45,9 +51,10 @@ const Body = () => {
         }
     }
 
+    if(flag) return <ShimmerCard/>
+
   return (
     <div className='wrapper'>
-    <SearchBar/>
     <div className='search-bar'>
         <input type="text"
          placeholder="Search for Restaurants" 
@@ -66,6 +73,7 @@ const Body = () => {
         }} >Search</button>
     </div>
     <div className="restraunt-list">
+          {restrauntListss.length == 0 && <nores />}
           <RestaurantList restaurants={restrauntListss} />
     </div>
     </div>
