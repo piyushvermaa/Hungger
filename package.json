@@ -1,5 +1,6 @@
 {
   "name": "ignite-out-app",
+  "homepage": ".",
   "version": "1.0.0",
   "description": "this is class 2",
   "scripts": {
