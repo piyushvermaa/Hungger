@@ -423,7 +423,7 @@ body {
   height: 100vh;
   width: 100%;
   padding: 90px 0;
-  background: #ddd;
+  /* background: #ddd; */
 }
 .pic{
   height: auto;
@@ -687,3 +687,39 @@ span{
   font-size: 16px;
   color: #666;
 }
+
+
+.food-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.food-card-image {
+  width: 20rem;
+  height: 20rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.food-card-details {
+  padding: 10px;
+}
+
+.food-card-name {
+  margin: 0;
+}
+
+.food-card-description {
+  margin: 5px 0;
+}
+
+.food-card-price {
+  margin: 0;
+  font-weight: bold;
+}
+
+
+/* profile card */

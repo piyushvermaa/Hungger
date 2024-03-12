@@ -9,6 +9,7 @@ import ErrorComponent from "./src/components/Error";
 import Service from "./src/components/Service";
 import Cart from "./src/components/Cart";
 import RestaurantMenu from "./src/components/RestaurantMenu";
+import Profile from "./src/components/Profile";
 
 
 
@@ -39,6 +40,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/about",
                 element: <About/>,
+            },
+            {
+                path: "/about/profile",
+                element: <Profile/>
             },
             {
                 path: "/service",
