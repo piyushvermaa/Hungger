@@ -12,20 +12,13 @@ const NavBar = () => {
   return (
     <div className="nav-wrapper">
       <div className="menu-icon" onClick={toggleMenu}>
-        <svg
-          viewBox="0 0 100 80"
-          width="40"
-          height="40"
-          fill="#000"
-          style={{ display: isOpen ? 'none' : 'block' }}
-        >
-          <rect width="100" height="20"></rect>
-          <rect y="30" width="100" height="20"></rect>
-          <rect y="60" width="100" height="20"></rect>
-        </svg>
+        <div className={`menu-toggle ${isOpen ? 'open' : ''}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
       <div className={`nav-items ${isOpen ? 'active' : ''}`}>
-        
         <ul>
           <li className="nav-link">
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit', outline: 'none' }}>Home</Link>
