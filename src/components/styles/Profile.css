@@ -22,7 +22,7 @@
     left: 0;
     width: 300px;
     height: 80px;
-    background: rgb(65, 231, 246);
+    background: rgb(170, 33, 255);
     animation: dsTop 1.5s;
   }
   
@@ -73,7 +73,7 @@
   
   #name a:hover {
     text-decoration: underline;
-    color: rgb(65, 231, 246);
+    color: rgb(174, 255, 53);
   }
   
   #name h6 {
@@ -103,7 +103,7 @@
   #button button {
     padding: 5px 20px;
     border-radius: 10px;
-    color: white;
+    color: rgb(100, 100, 100);
     letter-spacing: 0.05em;
     text-decoration: none;
     font-size: 10px;
@@ -112,10 +112,10 @@
   
   #button button:hover {
     color: white;
-    background: rgb(65, 231, 246);
+    background: rgb(65, 246, 83);
   }
   
-  #ds-info {
+  .ds-info {
     position: absolute;
     margin: auto;
     top: 120px;
@@ -125,38 +125,32 @@
     width: inherit;
     height: 40px;
     display: flex;
+    .pens, .projects, .posts {
+      position: relative;
+      left: -300px;
+      width: calc(250px / 3);
+      text-align: center;
+      color: white;
+      animation: fadeInMove 2s;
+      animation-fill-mode: forwards;
+      h6 {
+        text-transform: uppercase;
+        color: rgb(170, 33, 255);
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+    .ds {
+      &:nth-of-type(2) {
+        animation-delay: .5s;
+      }
+      &:nth-of-type(1) {
+        animation-delay: 1s;
+      }
+    }
   }
-  
-  #ds-info .pens,
-  #ds-info .projects,
-  #ds-info .posts {
-    position: relative;
-    left: -300px;
-    width: calc(250px / 3);
-    text-align: center;
-    color: white;
-    animation: fadeInMove 2s;
-    animation-fill-mode: forwards;
-  }
-  
-  #ds-info h6 {
-    text-transform: uppercase;
-    color: rgb(65, 231, 246);
-  }
-  
-  #ds-info p {
-    font-size: 12px;
-  }
-  
-  #ds-info .ds:nth-of-type(2) {
-    animation-delay: .5s;
-  }
-  
-  #ds-info .ds:nth-of-type(1) {
-    animation-delay: 1s;
-  }
-  
-  #ds-skill {
+  .ds-skill {
     position: absolute;
     margin: auto;
     bottom: 10px;
@@ -165,62 +159,57 @@
     width: 200px;
     height: 100px;
     animation: mvBottom 1.5s;
+    h6 {
+      margin-bottom: 5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: rgb(170, 33, 255);
+    }
+    .skill {
+      h6 {
+        font-weight: 400;
+        font-size: 8px;
+        letter-spacing: 0.05em;
+        margin: 4px 0;
+        color: white;
+      }
+      .fab {
+        color: rgb(170, 33, 255);
+        font-size: 14px;
+      }
+      .bar {
+        height: 5px;
+        background: rgb(170, 33, 255);
+        text-align: right;
+        p {
+          color: white;
+          font-size: 8px;
+          padding-top: 5px;
+          animation: fadeIn 5s;
+        }
+        &:hover {
+          background: white;
+        }
+      }
+      .bar-html {
+        width: 95%;
+        animation: htmlSkill 1s;
+        animation-delay: .4s;
+      }
+      .bar-css {
+        width: 90%;
+        animation: cssSkill 2s;
+        animation-delay: .4s;
+      }
+      .bar-js {
+        width: 75%;
+        animation: jsSkill 3s;
+        animation-delay: .4s;
+      }
+    }
   }
-  
-  #ds-skill h6 {
-    margin-bottom: 5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: rgb(65, 231, 246);
-  }
-  
-  #ds-skill #skill h6 {
-    font-weight: 400;
-    font-size: 8px;
-    letter-spacing: 0.05em;
-    margin: 4px 0;
-    color: white;
-  }
-  
-  #ds-skill #skill #fab {
-    color: rgb(65, 231, 246);
-    font-size: 14px;
-  }
-  
-  #ds-skill #skill #bar {
-    height: 5px;
-    background: rgb(65, 231, 246);
-    text-align: right;
-  }
-  
-  #ds-skill #skill #bar p {
-    color: white;
-    font-size: 8px;
-    padding-top: 5px;
-    animation: fadeIn 5s;
-  }
-  
-  #ds-skill #skill #bar:hover {
-    background: white;
-  }
-  
-  #ds-skill #skill #bar-html {
-    width: 95%;
-    animation: htmlSkill 1s;
-    animation-delay: .4s;
-  }
-  
-  #ds-skill #skill #bar-css {
-    width: 90%;
-    animation: cssSkill 2s;
-    animation-delay: .4s;
-  }
-  
-  #ds-skill #skill #bar-js {
-    width: 75%;
-    animation: jsSkill 3s;
-    animation-delay: .4s;
-  }
+
+
   
   @keyframes fadeInMove {
     0% {
