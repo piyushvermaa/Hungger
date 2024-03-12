@@ -14,7 +14,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    transform: translateY(-50%);
+    transform: translateY(0);
 }
 
 .cover-image img {
