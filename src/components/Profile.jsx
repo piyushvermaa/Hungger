@@ -25,11 +25,11 @@ export const UserProfileCard = () => {
           </div>
           <div className="ds projects">
             <h6 title="Number of projects created by the user">Projects <i className="fas fa-project-diagram"></i></h6>
-            <p>0</p>
+            <p>5</p>
           </div>
           <div className="ds posts">
             <h6 title="Number of posts">Posts <i className="fas fa-comments"></i></h6>
-            <p>0</p>
+            <p>16</p>
           </div>
         </div>
         <div className="ds-skill">
