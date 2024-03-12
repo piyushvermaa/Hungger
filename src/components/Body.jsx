@@ -4,7 +4,7 @@ import restrauntLists from './data/RestaurantLists';
 import '../components/styles/SearchBar.css';
 import './styles/Body.css'
 import { ShimmerCard } from './RestaurantList';
-import nores from './nores';
+
 
 const Body = () => {
     const [searchTxt, setSearchTxt] = useState('');
@@ -73,7 +73,6 @@ const Body = () => {
         }} >Search</button>
     </div>
     <div className="restraunt-list">
-          {restrauntListss.length == 0 && <nores />}
           <RestaurantList restaurants={restrauntListss} />
     </div>
     </div>

@@ -20,7 +20,7 @@ body, #root {
 
 body {
   font-family: Arial, sans-serif; /* Change font family if needed */
-  background: linear-gradient(45deg, #dfdfdf, #ffffff, #ccc9cf, #adadad, #5a5a5a);
+  /* background: linear-gradient(45deg, #dfdfdf, #ffffff, #ccc9cf, #adadad, #5a5a5a); */
 
   background-size: 400% 400%; /* Adjust gradient size */
   animation: gradientChange 10s ease infinite; /* Adjust animation duration */
@@ -675,7 +675,7 @@ span{
 
 .no-results {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10%;
 }
 
 .no-results h2 {
